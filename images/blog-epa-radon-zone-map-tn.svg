@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="EPA radon zone map of Tennessee showing most counties in Zone 1 high potential">
+  <rect width="800" height="500" fill="#f7f5f2"/>
+  <text x="400" y="45" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="700" fill="#333">Tennessee EPA Radon Zones</text>
+  <text x="400" y="72" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#666">EPA Map of Radon Zones — Tennessee</text>
+
+  <!-- Simplified TN outline -->
+  <path d="M200,120 L600,120 L620,150 L600,200 L580,260 L560,330 L540,370 L500,380 L460,360 L420,370 L380,350 L340,360 L300,330 L260,340 L240,300 L220,260 L200,200 Z" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text x="400" y="240" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#b91c1c">TN</text>
+  <text x="400" y="262" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#b91c1c">Mostly Zone 1</text>
+
+  <!-- Legend -->
+  <rect x="100" y="410" width="600" height="60" rx="8" fill="#fff" stroke="#ccc" stroke-width="1"/>
+  <rect x="120" y="430" width="40" height="20" fill="#fee2e2" stroke="#b91c1c"/>
+  <text x="170" y="445" font-family="sans-serif" font-size="13" fill="#333">Zone 1 — highest potential (most of TN)</text>
+  <rect x="460" y="430" width="40" height="20" fill="#fef3c7" stroke="#d97706"/>
+  <text x="510" y="445" font-family="sans-serif" font-size="13" fill="#333">Zone 2 — moderate</text>
+
+  <text x="400" y="490" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#666">Middle Tennessee counties: Davidson, Williamson, Rutherford = Zone 1</text>
+</svg>

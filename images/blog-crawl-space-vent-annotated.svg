@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Annotated diagram of a crawl space vent showing airflow and moisture issues">
+  <rect width="800" height="500" fill="#f7f5f2"/>
+  <text x="400" y="45" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="700" fill="#333">Crawl Space Vent: Annotated</text>
+  <text x="400" y="72" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#666">Why a traditional vent can cause more problems than it solves</text>
+
+  <!-- Foundation wall -->
+  <rect x="100" y="120" width="50" height="290" fill="#d6d3d1" stroke="#78716c" stroke-width="2"/>
+  <text x="125" y="450" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#555">Foundation wall</text>
+
+  <!-- Vent opening -->
+  <rect x="130" y="200" width="24" height="60" fill="#333"/>
+  <text x="142" y="240" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#fff" transform="rotate(-90 142 240)">VENT</text>
+
+  <!-- Outside air arrows -->
+  <line x1="40" y1="210" x2="120" y2="210" stroke="#0e7490" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  <line x1="40" y1="250" x2="120" y2="250" stroke="#0e7490" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  <text x="30" y="185" text-anchor="end" font-family="sans-serif" font-size="13" font-weight="700" fill="#0e7490">Outside air</text>
+  <text x="30" y="280" text-anchor="end" font-family="sans-serif" font-size="12" fill="#555">warm, humid</text>
+  <text x="30" y="296" text-anchor="end" font-family="sans-serif" font-size="12" fill="#555">summer air</text>
+
+  <!-- Crawl space interior -->
+  <rect x="150" y="120" width="500" height="290" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="400" y="160" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#92400e">Crawl space interior</text>
+
+  <!-- Moisture arrows up -->
+  <line x1="250" y1="380" x2="250" y2="300" stroke="#e11d48" stroke-width="3" marker-end="url(#arrowRed)"/>
+  <line x1="400" y1="380" x2="400" y2="300" stroke="#e11d48" stroke-width="3" marker-end="url(#arrowRed)"/>
+  <line x1="550" y1="380" x2="550" y2="300" stroke="#e11d48" stroke-width="3" marker-end="url(#arrowRed)"/>
+  <text x="400" y="420" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#e11d48">Ground moisture vapor rises</text>
+
+  <!-- Condensation label -->
+  <text x="400" y="240" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#92400e">Warm outside air meets cooler surfaces</text>
+  <text x="400" y="260" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#92400e">→ condensation, mold, wood rot</text>
+
+  <!-- Floor above -->
+  <rect x="150" y="80" width="500" height="40" fill="#a8a29e" stroke="#78716c" stroke-width="2"/>
+  <text x="400" y="105" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#fff">Floor above (conditioned home)</text>
+
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0e7490"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#e11d48"/>
+    </marker>
+  </defs>
+
+  <text x="400" y="475" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#666">Vents admit humid outdoor air in summer while ground moisture keeps rising — a double moisture source</text>
+</svg>

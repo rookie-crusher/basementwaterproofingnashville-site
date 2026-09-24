@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Comparison of code approved damp proofing materials against code approved waterproofing materials">
+  <rect width="800" height="500" fill="#f7f5f2"/>
+  <text x="400" y="45" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="700" fill="#333">The Code&rsquo;s Own Two Lists</text>
+  <text x="400" y="72" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#666">IRC R406.1 damp proofing vs. R406.2 waterproofing</text>
+  <rect x="60" y="110" width="320" height="340" rx="8" fill="#fff" stroke="#0e7490" stroke-width="2"/>
+  <rect x="60" y="110" width="320" height="48" rx="8" fill="#0e7490"/>
+  <text x="220" y="141" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#fff">R406.1 Damp Proofing</text>
+  <text x="80" y="185" font-family="sans-serif" font-size="14" fill="#333">1. Bituminous coating</text>
+  <text x="80" y="215" font-family="sans-serif" font-size="14" fill="#333">2. Portland cement parging</text>
+  <text x="80" y="245" font-family="sans-serif" font-size="14" fill="#333">3. Surface applied</text>
+  <text x="92" y="265" font-family="sans-serif" font-size="13" fill="#555">water-repellent</text>
+  <rect x="80" y="290" width="220" height="30" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="90" y="310" font-family="sans-serif" font-size="13" font-weight="700" fill="#92400e">Bituminous coating highlighted</text>
+  <text x="80" y="360" font-family="sans-serif" font-size="12" fill="#888">Stops vapour, not liquid water.</text>
+  <rect x="420" y="110" width="320" height="340" rx="8" fill="#fff" stroke="#164e63" stroke-width="2"/>
+  <rect x="420" y="110" width="320" height="48" rx="8" fill="#164e63"/>
+  <text x="580" y="141" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#fff">R406.2 Waterproofing</text>
+  <text x="440" y="185" font-family="sans-serif" font-size="14" fill="#333">1. Membrane</text>
+  <text x="440" y="215" font-family="sans-serif" font-size="14" fill="#333">2. Bentonite panel</text>
+  <text x="440" y="245" font-family="sans-serif" font-size="14" fill="#333">3. Rubberized asphalt</text>
+  <text x="440" y="275" font-family="sans-serif" font-size="14" fill="#333">4. PVC sheet</text>
+  <text x="440" y="305" font-family="sans-serif" font-size="14" fill="#333">5. PE sheet</text>
+  <text x="440" y="335" font-family="sans-serif" font-size="14" fill="#333">6. Cementitious coating</text>
+  <text x="440" y="380" font-family="sans-serif" font-size="12" fill="#888">Bituminous coating does NOT appear</text>
+  <text x="440" y="398" font-family="sans-serif" font-size="12" fill="#888">on this list.</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Diagram showing vapor drive through a concrete slab and how a vapor barrier blocks it">
+  <rect width="800" height="500" fill="#f7f5f2"/>
+  <text x="400" y="45" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="700" fill="#333">Vapor Drive Through a Slab</text>
+  <text x="400" y="72" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#666">Concrete is porous — water vapor moves from ground up into the home</text>
+  <rect x="100" y="120" width="600" height="60" fill="#d6d3d1" stroke="#78716c" stroke-width="2"/>
+  <text x="400" y="156" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#292524">Concrete Slab</text>
+  <rect x="100" y="180" width="600" height="200" fill="#e7e5e4" stroke="#a8a29e" stroke-width="2"/>
+  <text x="400" y="240" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#444">Moisture vapor rises from soil</text>
+  <line x1="180" y1="360" x2="180" y2="200" stroke="#0e7490" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="300" y1="360" x2="300" y2="200" stroke="#0e7490" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="420" y1="360" x2="420" y2="200" stroke="#0e7490" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="540" y1="360" x2="540" y2="200" stroke="#0e7490" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="660" y1="360" x2="660" y2="200" stroke="#0e7490" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="100" y="380" width="600" height="40" fill="#164e63"/>
+  <text x="400" y="406" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="700" fill="#fff">Vapor Barrier (encapsulation liner) stops the drive</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0e7490"/>
+    </marker>
+  </defs>
+  <text x="400" y="470" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#666">Without a barrier, vapor migrates through the slab and into the living space above</text>
+</svg>
