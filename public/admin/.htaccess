@@ -1,0 +1,23 @@
+# Site admin. Code only; secrets live in ../../bw-admin-data (outside public_html).
+DirectoryIndex index.php
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Turning the rewrite engine on here cancels the site-wide rules, so the
+  # HTTPS redirect is repeated: the login must never travel unencrypted.
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:\d+)?$
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+  # PHP includes and anything dot-prefixed are never served directly.
+  RewriteRule ^lib/ - [F,L]
+  RewriteRule (^|/)\. - [F,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

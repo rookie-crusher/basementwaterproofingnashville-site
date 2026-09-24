@@ -1,0 +1,43 @@
+{
+  "name": "basement-waterproofing-nashville",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "admin:local": "node scripts/admin-vendor.mjs && php -S 127.0.0.1:4321 -t public",
+    "images": "node scripts/optimize-images.mjs",
+    "favicon": "node scripts/build-favicon.mjs",
+    "prebuild": "node scripts/build-favicon.mjs && node scripts/optimize-images.mjs && node scripts/admin-vendor.mjs",
+    "build": "next build",
+    "postbuild": "node scripts/post-export.mjs",
+    "preview": "npx serve out",
+    "overlap": "node scripts/content-overlap.mjs",
+    "brand": "node scripts/build-brand.mjs",
+    "shotlist": "node scripts/shot-list.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource-variable/figtree": "^5.3.0",
+    "@fontsource-variable/public-sans": "^5.3.0",
+    "@fontsource-variable/source-serif-4": "^5.3.0",
+    "@fontsource/dm-mono": "^5.3.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^18.0.9",
+    "next": "^15.5.22",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "js-yaml": "^3.15.2",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^4.0.0",
+    "tinymce": "^7.9.3",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2",
+    "typescript": "^5.7.3"
+  }
+}

@@ -1,0 +1,375 @@
+@import 'tailwindcss';
+
+/*
+  DESIGN TOKENS — "grade line"
+  ---------------------------------------------------------------------------
+  The organising idea: this site is about the boundary between above-grade and
+  below-grade. That boundary is the layout's structural device. Above-grade
+  surfaces are limestone (the rock Nashville sits on: bone, faintly cool, not
+  cream). Below-grade surfaces are wet stone. The accent is groundwater teal.
+  The call-to-action uses modern hi-vis — the actual colour of the vests on a
+  Middle Tennessee excavation — which reads as urgent without the safety-orange
+  cliché every waterproofing site already uses.
+
+  Colour is used to encode depth. Do not use grade-950 as a decorative dark;
+  use it where the content is literally about what is below the ground.
+*/
+
+@theme {
+  /* ── SKY BLUE PALETTE ─────────────────────────────────────────────────
+     Dark sections: deep sky navy. Body text: near-black. Every accent uses
+     the sky-blue ramp (#0ea5e9 family). Backgrounds are white/sky-50.
+  */
+
+  /* Deep sky navy — dark-section backgrounds */
+  --color-grade-950: #0c2840;
+  /* Near-black — primary body text, headings */
+  --color-grade-900: #111827;
+  /* Dark navy — secondary text inside dark sections */
+  --color-grade-800: #1e3a5f;
+  /* Medium sky-blue-gray — muted text, borders */
+  --color-grade-600: #3b6d8a;
+  /* Light sky-blue-gray — very muted / disabled */
+  --color-grade-400: #7baec7;
+  --color-brand-grey: #5a7d91;
+
+  /* Light backgrounds — white → sky-50 */
+  --color-limestone-50: #f8fafc;
+  --color-limestone-100: #f0f9ff;
+  --color-limestone-200: #e0f2fe;
+  --color-limestone-300: #bae6fd;
+
+  /* Sky-blue accent scale */
+  --color-water-700: #0284c7;
+  --color-water-500: #0ea5e9;
+  --color-water-300: #38bdf8;
+  --color-water-100: #e0f2fe;
+
+  /* CTA — sky blue (replaces hi-vis yellow) */
+  --color-hivis-500: #0ea5e9;
+  --color-hivis-600: #0284c7;
+
+  /* Diagnostic red — unchanged */
+  --color-alert-600: #b3261e;
+
+  /* Archivo: dense grotesque for headings, nav and buttons.
+     Figtree: humanist body face. DM Mono for eyebrows and data. */
+  --font-display: 'Archivo Variable', 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Figtree Variable', 'Figtree', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --radius-card: 2px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    /* White base so sections can alternate white / limestone-100 and actually
+       read as separate bands. When the base was itself limestone-100 every
+       untinted section merged into its neighbour. */
+    background: #ffffff;
+    color: var(--color-grade-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Display face: tight, structural, set in small caps-ish tracking */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.012em;
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible keyboard focus everywhere — never removed */
+  :focus-visible {
+    outline: 3px solid var(--color-water-500);
+    outline-offset: 2px;
+  }
+
+  /* Below-grade regions invert the focus ring for contrast */
+  .below-grade :focus-visible {
+    outline-color: var(--color-hivis-500);
+  }
+}
+
+@layer components {
+  /* ── The signature: a grade line with a mono depth label ─────────────── */
+  .gradeline {
+    position: relative;
+    height: 1px;
+    background: var(--color-grade-400);
+  }
+  .gradeline::before {
+    content: attr(data-depth);
+    position: absolute;
+    left: 0;
+    top: -0.55rem;
+    padding-right: 0.75rem;
+    background: inherit;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-grade-600);
+  }
+
+  /* Eyebrow label — mono, wide tracking, reads like a drawing callout */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-water-700);
+  }
+  .below-grade .eyebrow {
+    color: var(--color-water-300);
+  }
+
+  /* Below-grade section: darker, cooler, as if underground */
+  .below-grade {
+    background: var(--color-grade-950);
+    color: var(--color-limestone-100);
+  }
+  .below-grade h1,
+  .below-grade h2,
+  .below-grade h3 {
+    color: var(--color-limestone-50);
+  }
+
+  /* Primary CTA — sky blue, white text, large tap target */
+  .cta-primary {
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3.25rem;
+    padding: 0 1.5rem;
+    background: var(--color-hivis-500);
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    letter-spacing: -0.01em;
+    border-radius: var(--radius-card);
+    border-bottom: 3px solid var(--color-hivis-600);
+    transition: background 150ms ease, transform 150ms ease;
+  }
+  .cta-primary:hover {
+    background: var(--color-hivis-600);
+  }
+  .cta-primary:active {
+    transform: translateY(1px);
+  }
+
+  .cta-secondary {
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3.25rem;
+    padding: 0 1.5rem;
+    border: 1.5px solid var(--color-grade-600);
+    color: var(--color-grade-900);
+    font-family: var(--font-display);
+    font-weight: 600;
+    border-radius: var(--radius-card);
+    transition: background 150ms ease;
+  }
+  .cta-secondary:hover {
+    background: var(--color-limestone-200);
+  }
+  .below-grade .cta-secondary {
+    white-space: nowrap;
+    border-color: var(--color-grade-400);
+    color: var(--color-limestone-100);
+  }
+  .below-grade .cta-secondary:hover {
+    background: var(--color-grade-800);
+  }
+
+  /* Data table look for spec-style lists */
+  .spec {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: -0.01em;
+  }
+
+  .prose-local p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .prose-local p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Water table drift on the hero section drawing. Subtle by design. */
+@keyframes watertable {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+.water-drift {
+  animation: watertable 7s ease-in-out infinite;
+}
+
+/* ── Lead form embed ──────────────────────────────────────────────────────
+   The provider's iframe is natively 600x545. A fixed 600px width overflows a
+   375px phone viewport and causes horizontal scroll, so it is set fluid with
+   a 600px cap. Height comes from the config in src/data/lead-form.ts, with a
+   taller value on narrow screens because the form's fields stack there. */
+.lead-embed {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: var(--lead-h-mobile, 700px);
+  border: 0;
+}
+@media (min-width: 640px) {
+  .lead-embed {
+    height: var(--lead-h, 545px);
+  }
+}
+
+/* ── Article prose ────────────────────────────────────────────────────────
+   Long-form typography for the guides. Measure is capped near 68 characters,
+   which is where reading speed peaks for body text; wider lines cost
+   comprehension regardless of how much horizontal room is available. */
+.article-prose {
+  max-width: 68ch;
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  color: var(--color-grade-900);
+}
+.article-prose > * + * {
+  margin-top: 1.15em;
+}
+.article-prose h2 {
+  margin-top: 2.6em;
+  margin-bottom: 0.6em;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  scroll-margin-top: 2rem;
+}
+.article-prose h3 {
+  margin-top: 1.9em;
+  margin-bottom: 0.45em;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  scroll-margin-top: 2rem;
+}
+.article-prose h2 + h3 {
+  margin-top: 1.1em;
+}
+.article-prose a {
+  color: var(--color-water-700);
+  text-decoration: underline;
+  text-decoration-color: var(--color-water-300);
+  text-underline-offset: 2px;
+}
+.article-prose a:hover {
+  text-decoration-color: var(--color-water-700);
+}
+.article-prose strong {
+  font-weight: 700;
+}
+.article-prose ul,
+.article-prose ol {
+  padding-left: 1.35em;
+}
+.article-prose ul {
+  list-style: disc;
+}
+.article-prose ol {
+  list-style: decimal;
+}
+.article-prose li + li {
+  margin-top: 0.4em;
+}
+.article-prose li::marker {
+  color: var(--color-water-500);
+}
+.article-prose blockquote {
+  border-left: 3px solid var(--color-water-500);
+  padding-left: 1.1em;
+  font-style: normal;
+  color: var(--color-grade-800);
+}
+.article-prose code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--color-limestone-200);
+  padding: 0.1em 0.35em;
+}
+
+/* Tables carry numbers, so they get a spec treatment rather than a prose one */
+.article-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+.article-prose th,
+.article-prose td {
+  border: 1px solid var(--color-limestone-300);
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+.article-prose th {
+  background: var(--color-limestone-200);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Article figures */
+.article-figure {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.article-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.article-figure figcaption {
+  margin-top: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--color-grade-600);
+}

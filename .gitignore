@@ -1,0 +1,16 @@
+node_modules
+.next
+out
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
+# Generated at build time (sources stay tracked: raster originals live in
+# assets/images-src, hand-drawn SVG diagrams in public/images)
+public/images/*.webp
+public/images/*.avif
+public/admin/vendor/
+
+# Admin panel data when run locally (npm run admin:local). On Hostinger this
+# folder sits outside public_html and holds the GitHub token and password hash.
+bw-admin-data/

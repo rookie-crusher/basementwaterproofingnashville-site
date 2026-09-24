@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Comparison of crawl space, slab-on-grade and basement foundation types in Middle Tennessee">
+  <rect width="800" height="500" fill="#f7f5f2"/>
+  <text x="400" y="45" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="700" fill="#333">Foundation Types in Middle Tennessee</text>
+  <text x="400" y="72" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#666">Crawl space vs. slab-on-grade vs. basement</text>
+
+  <!-- Crawl space -->
+  <rect x="50" y="110" width="220" height="340" rx="8" fill="#fff" stroke="#0e7490" stroke-width="2"/>
+  <rect x="50" y="110" width="220" height="48" rx="8" fill="#0e7490"/>
+  <text x="160" y="141" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700" fill="#fff">Crawl Space</text>
+  <rect x="80" y="180" width="40" height="80" fill="#d6d3d1"/>
+  <rect x="200" y="180" width="40" height="80" fill="#d6d3d1"/>
+  <rect x="80" y="260" width="160" height="30" fill="#a8a29e"/>
+  <rect x="80" y="180" width="160" height="80" fill="none" stroke="#78716c" stroke-width="2"/>
+  <text x="160" y="225" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444">exposed soil</text>
+  <text x="160" y="320" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">Most common in TN</text>
+  <text x="160" y="340" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">Vented to outside</text>
+  <text x="160" y="360" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">Prone to moisture</text>
+
+  <!-- Slab -->
+  <rect x="290" y="110" width="220" height="340" rx="8" fill="#fff" stroke="#164e63" stroke-width="2"/>
+  <rect x="290" y="110" width="220" height="48" rx="8" fill="#164e63"/>
+  <text x="400" y="141" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700" fill="#fff">Slab-on-Grade</text>
+  <rect x="320" y="180" width="160" height="40" fill="#d6d3d1" stroke="#78716c" stroke-width="2"/>
+  <text x="400" y="205" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#555">concrete slab</text>
+  <rect x="320" y="220" width="160" height="20" fill="#a8a29e"/>
+  <text x="400" y="270" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">No crawl space</text>
+  <text x="400" y="290" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">Sits directly on ground</text>
+  <text x="400" y="310" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">Vapor drive through slab</text>
+
+  <!-- Basement -->
+  <rect x="530" y="110" width="220" height="340" rx="8" fill="#fff" stroke="#b45309" stroke-width="2"/>
+  <rect x="530" y="110" width="220" height="48" rx="8" fill="#b45309"/>
+  <text x="640" y="141" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700" fill="#fff">Basement</text>
+  <rect x="560" y="180" width="40" height="160" fill="#d6d3d1"/>
+  <rect x="680" y="180" width="40" height="160" fill="#d6d3d1"/>
+  <rect x="560" y="340" width="160" height="30" fill="#a8a29e"/>
+  <rect x="560" y="180" width="160" height="160" fill="#fef3c7" stroke="#78716c" stroke-width="2"/>
+  <text x="640" y="260" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#555">finished space</text>
+  <text x="640" y="405" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">Below grade walls</text>
+  <text x="640" y="425" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">Need waterproofing</text>
+  <text x="640" y="445" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">Rarest in TN</text>
+</svg>

@@ -1,0 +1,67 @@
+# Builds the static site and publishes it to the `deploy` branch.
+# Hostinger auto-deploys that branch into public_html.
+#
+# Runs on every push to main (the admin panel commits there when an article is
+# published or updated) and on demand ("Publish again" in the admin panel).
+# Commits whose message contains [skip ci] (drafts, image uploads) do not run.
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# A newer publish replaces one still in progress: only the latest state matters.
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # prebuild (favicon, images, admin vendor) -> next build -> postbuild (.htaccess)
+      - run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: '1'
+
+      - name: Publish out/ to the deploy branch
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          REMOTE="https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code --heads "$REMOTE" deploy >/dev/null 2>&1; then
+            git clone --quiet --depth 1 --branch deploy "$REMOTE" deploy-tree
+          else
+            mkdir deploy-tree
+            git -C deploy-tree init --quiet -b deploy
+            git -C deploy-tree remote add origin "$REMOTE"
+          fi
+          # Replace everything with the fresh build (keeping history, so
+          # Hostinger can fast-forward).
+          find deploy-tree -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a out/. deploy-tree/
+          cd deploy-tree
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Site unchanged; nothing to deploy."
+            exit 0
+          fi
+          git -c user.name="site-deploy[bot]" -c user.email="deploy@basementwaterproofingnashville.com" \
+            commit --quiet -m "Deploy ${GITHUB_SHA::7}: $(git -C .. log -1 --format=%s)"
+          git push --quiet origin deploy
+          echo "Deployed ${GITHUB_SHA::7}"

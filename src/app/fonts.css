@@ -1,0 +1,29 @@
+/*
+  FONTS — Archivo (display) + Figtree (body) + DM Mono (callouts)
+  ---------------------------------------------------------------------------
+  Archivo is a grotesque built for headlines and signage: dense, slightly
+  condensed, and it holds its colour in the heavy weights the hero and section
+  headings use. It carries uppercase tracking better than a geometric face,
+  which is what the nav, buttons and card headings ask for.
+
+  Figtree is the body face — humanist, open apertures, comfortable at 15-17px
+  over long paragraphs where Archivo would get tiring.
+
+  DM Mono stays for eyebrows, data labels and spec callouts.
+
+  All three are SELF-HOSTED via @fontsource. The previous revision pulled
+  Montserrat and Inter from fonts.googleapis.com, which puts a render-blocking
+  request to a third-party origin on the critical path of every page — the
+  single most expensive thing you can do to LCP on a static site. Variable
+  fonts also mean one file per family instead of one per weight.
+*/
+
+/* Display — variable weight axis, 400-900 available */
+@import '@fontsource-variable/archivo/wght.css';
+
+/* Body — variable weight axis, 300-900 available */
+@import '@fontsource-variable/figtree/wght.css';
+
+/* Data and callouts */
+@import '@fontsource/dm-mono/latin-400.css';
+@import '@fontsource/dm-mono/latin-500.css';
