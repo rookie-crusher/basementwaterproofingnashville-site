@@ -14,9 +14,9 @@ import type { Service } from '@/data/services';
 
 export const metadataBase = new URL(site.domain);
 
-/** Social preview card. Generated from the brand mark — see assets/brand-src. */
+/** Version the URL when the social card changes so link previews fetch it again. */
 export const ogImage = {
-  url: '/brand/og-image.png',
+  url: '/brand/og-image.png?v=2',
   width: 1200,
   height: 630,
   alt: `${site.brand} — ${site.phone.display}`,

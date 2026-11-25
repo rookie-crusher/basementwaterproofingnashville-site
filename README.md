@@ -109,8 +109,7 @@ Business Connect, Bing Places, Yelp, Facebook, BBB, and every citation
 directory. Mismatched NAP between site and GBP is the most common local
 ranking problem.
 
-The phone number is `+1 615-759-0553` — a local Nashville number, which is
-what Google Business Profile wants. Do not swap it for a toll-free number.
+The business phone number is `(615) 845-8448`.
 
 ---
 

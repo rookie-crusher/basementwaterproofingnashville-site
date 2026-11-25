@@ -17,8 +17,8 @@ export const site = {
   tagline: 'Water out. Foundation dry. Guaranteed.',
 
   phone: {
-    e164: '+16157590553',
-    display: '(615) 759-0553',
+    e164: '+16158458448',
+    display: '(615) 845-8448',
   },
 
   email: 'info@basementwaterproofingnashville.com',

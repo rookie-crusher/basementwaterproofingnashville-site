@@ -3,6 +3,7 @@ import { aggregate, isSelfServing, type Review } from '@/data/reviews';
 import type { City } from '@/data/cities';
 import type { Service } from '@/data/services';
 import { publishedCities } from '@/data/cities';
+import { ogImage } from './seo';
 
 /**
  * JSON-LD BUILDERS
@@ -71,7 +72,7 @@ export function localBusinessSchema() {
       width: 512,
       height: 512,
     },
-    image: `${site.domain}/brand/og-image.png`,
+    image: `${site.domain}${ogImage.url}`,
     description: `Basement waterproofing, crawl space encapsulation and foundation drainage across ${site.serviceAreaLabel}.`,
     // Address is only emitted once a real one is entered. A service-area
     // business may legitimately omit it in favour of areaServed.
@@ -241,6 +242,6 @@ export function articleSchema(
     url,
     author: { '@id': ORG_ID },
     publisher: { '@id': ORG_ID },
-    image: `${site.domain}/brand/og-image.png`,
+    image: `${site.domain}${ogImage.url}`,
   });
 }
